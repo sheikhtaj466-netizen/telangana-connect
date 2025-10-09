@@ -145,3 +145,39 @@ input:focus, select:focus, textarea:focus {
 .lang-switcher a { color: var(--text-light); text-decoration: none; padding: 5px 8px; border-radius: 5px; }
 .lang-switcher a.active, .lang-switcher a:hover { background-color: var(--surface-light); }
 .action-buttons { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; }
+/* --- Instagram Link Styling (Final Touch) --- */
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.instagram-link i {
+    font-size: 1.2rem;
+}
+
+/* Aurora Theme Specific Style */
+body.theme-aurora .instagram-link {
+    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+body.theme-aurora .instagram-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Lighting Effect */
+    transform: scale(1.05);
+}
+
+/* Minimal Theme Specific Style */
+body.theme-minimal .instagram-link {
+    color: #333;
+    background: #e9ecef;
+}
+body.theme-minimal .instagram-link:hover {
+    background: #dee2e6;
+    color: #007bff;
+}
