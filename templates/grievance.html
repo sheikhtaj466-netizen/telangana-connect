@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card form-card">
+    <h2>{{ g.locale.grievance_title }}</h2>
+    <form action="{{ url_for('submit_grievance') }}" method="post">
+        <label for="name">{{ g.locale.name_label }}</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="department">{{ g.locale.department_label }}</label>
+        <select id="department" name="department">
+            <option value="Revenue">Revenue Department</option>
+            <option value="Electricity">Electricity Department</option>
+        </select>
+
+        <label for="complaint">{{ g.locale.complaint_label }}</label>
+        <textarea id="complaint" name="complaint" rows="4" required></textarea>
+
+        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> {{ g.locale.submit_button }}</button>
+    </form>
+</div>
+{% endblock %}

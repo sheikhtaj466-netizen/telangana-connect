@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card">
+    <h2>{{ g.locale.status_title }}</h2>
+    {% if grievance %}
+        <div class="status-details">
+            <p><strong>{{ g.locale.ticket_id }}:</strong> {{ grievance.ticket_id }}</p>
+            <p><strong>{{ g.locale.department }}:</strong> {{ grievance.department }}</p>
+            <p><strong>{{ g.locale.complaint }}:</strong> {{ grievance.complaint }}</p>
+            <p><strong>{{ g.locale.status }}:</strong> <span class="status-badge status-{{ grievance.status|lower }}">{{ grievance.status }}</span></p>
+        </div>
+    {% else %}
+        <p>{{ g.locale.no_grievance_found }}</p>
+    {% endif %}
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary mt-20">{{ g.locale.go_back_button }}</a>
+</div>
+{% endblock %}

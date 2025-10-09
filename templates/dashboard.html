@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="dashboard-header">
+    <div>
+        <h2>{{ g.locale.dashboard_welcome }},</h2>
+        <h2 style="color: var(--brand-secondary);">{{ session.user_type|capitalize }}!</h2>
+    </div>
+    <a href="{{ url_for('logout') }}" class="btn"><i class="fas fa-sign-out-alt"></i> {{ g.locale.logout_button }}</a>
+</div>
+
+<h3>{{ g.locale.personalized_services }}</h3>
+<div class="card-container">
+    {% for service in services %}
+    <div class="card service-card" role="article" aria-labelledby="service-title-{{ loop.index }}">
+        <div>
+            <h4 id="service-title-{{ loop.index }}"><i class="fas {{ service.icon }}"></i> {{ service.name[g.lang] }}</h4>
+            <p>{{ service.description[g.lang] }}</p>
+        </div>
+        <a href="{{ service.link }}" target="_blank" class="learn-more" aria-label="Learn more about {{ service.name[g.lang] }}">Learn More &rarr;</a>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="action-buttons">
+    <a href="{{ url_for('grievance_page') }}" class="btn btn-success"><i class="fas fa-file-signature"></i> {{ g.locale.file_grievance_button }}</a>
+    <a href="{{ url_for('track_page') }}" class="btn btn-warning"><i class="fas fa-search-location"></i> {{ g.locale.track_grievance_button }}</a>
+</div>
+{% endblock %}

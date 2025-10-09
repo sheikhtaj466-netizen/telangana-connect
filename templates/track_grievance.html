@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card form-card">
+    <h2>{{ g.locale.track_title }}</h2>
+    <form action="{{ url_for('check_status') }}" method="post">
+        <label for="ticket_id">{{ g.locale.ticket_id_label }}</label>
+        <input type="text" id="ticket_id" name="ticket_id" required>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> {{ g.locale.track_button }}</button>
+    </form>
+</div>
+{% endblock %}

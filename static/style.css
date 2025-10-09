@@ -1,0 +1,147 @@
+/* --- Project Aurora: Flagship Grade Design System --- */
+
+/* 1. VISUAL SYSTEM: Variables & Global Styles */
+:root {
+    --brand-primary: hsl(220, 100%, 60%);
+    --brand-secondary: hsl(290, 100%, 70%);
+    --surface-light: rgba(255, 255, 255, 0.1);
+    --surface-dark: rgba(20, 20, 20, 0.2);
+    --text-light: hsl(210, 30%, 95%);
+    --text-dark: hsl(210, 20%, 15%);
+    --shadow-color: 220, 40%, 20%;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --radius-lg: 1.5rem;
+    --radius-md: 0.75rem;
+    --transition-cinematic: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://rsms.me/inter/inter.css');
+    font-optical-sizing: auto;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #050a14;
+    color: var(--text-light);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Aurora Background Animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(0, 123, 255, 0.1), transparent 40%);
+    z-index: -1;
+}
+
+/* 4. LIGHT, DEPTH & MATERIALITY: Photoreal UI */
+.card {
+    background: var(--surface-light);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s var(--transition-cinematic), box-shadow 0.5s var(--transition-cinematic);
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* 2. MOTION FABRIC: Cinematic Interaction */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s var(--transition-cinematic) forwards;
+}
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+/* Main Structure & Content */
+.container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+.main-header { padding: 1rem 0; }
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.main-header h1 { font-size: 2em; text-shadow: 0 0 15px var(--brand-primary); }
+.dashboard-header h2 { font-size: 2.5em; margin-bottom: 0.5em; }
+
+/* 3. INTERACTION INTELLIGENCE: Buttons & Forms */
+.btn {
+    background: linear-gradient(45deg, var(--brand-primary), var(--brand-secondary));
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 300%; height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+.btn:hover::before { transform: translate(-50%, -50%) scale(1); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+
+input, select, textarea {
+    background: var(--surface-light);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--brand-primary);
+}
+
+/* Service Card Specifics */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px; /* Consistent height */
+}
+.service-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.3em;
+    margin-top: 0;
+}
+.service-card .learn-more {
+    color: var(--brand-secondary);
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* Accessibility & Other Helpers */
+.lang-switcher a { color: var(--text-light); text-decoration: none; padding: 5px 8px; border-radius: 5px; }
+.lang-switcher a.active, .lang-switcher a:hover { background-color: var(--surface-light); }
+.action-buttons { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; }

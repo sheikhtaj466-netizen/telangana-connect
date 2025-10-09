@@ -1,0 +1,102 @@
+{
+  "farmer": [
+    {
+      "id": "agri_dept", "icon": "fa-tractor",
+      "name": { "en": "Dept of Agriculture", "te": "వ్యవసాయ శాఖ" },
+      "description": { "en": "Official site for all agriculture updates and schemes.", "te": "అన్ని వ్యవసాయ నవీకరణలు మరియు పథకాల కోసం అధికారిక సైట్." },
+      "link": "https://agri.telangana.gov.in"
+    },
+    {
+      "id": "rythu_bharosa", "icon": "fa-hand-holding-dollar",
+      "name": { "en": "Rythu Bharosa", "te": "రైతు భరోసా" },
+      "description": { "en": "Check status for the financial support scheme for farmers.", "te": "రైతుల ఆర్థిక సహాయ పథకం కోసం స్థితిని తనిఖీ చేయండి." },
+      "link": "https://rythubharosa.telangana.gov.in"
+    },
+    {
+      "id": "horticulture", "icon": "fa-carrot",
+      "name": { "en": "Horticulture Dept", "te": "ఉద్యానవన శాఖ" },
+      "description": { "en": "Info on fruits, vegetables, and floriculture programs.", "te": "పండ్లు, కూరగాయలు మరియు పూల పెంపకం కార్యక్రమాలపై సమాచారం." },
+      "link": "https://horticulture.tg.nic.in"
+    },
+    {
+      "id": "farmer_registry", "icon": "fa-address-card",
+      "name": { "en": "Telangana Farmer Registry", "te": "తెలంగాణ రైతు రిజిస్ట్రీ" },
+      "description": { "en": "For farmer registration, profile updates, and details.", "te": "రైతు నమోదు, ప్రొఫైల్ నవీకరణలు మరియు వివరాల కోసం." },
+      "link": "https://tlfr.agristack.gov.in/farmer-registry-tl"
+    },
+    {
+      "id": "meeseva", "icon": "fa-server",
+      "name": { "en": "MeeSeva Telangana", "te": "మీసేవ తెలంగాణ" },
+      "description": { "en": "Unified portal for land records, crop insurance, etc.", "te": "భూమి రికార్డులు, పంటల బీమా మొదలైన వాటి కోసం ఏకీకృత పోర్టల్." },
+      "link": "https://ts.meeseva.telangana.gov.in"
+    },
+    {
+      "id": "state_portal", "icon": "fa-landmark-flag",
+      "name": { "en": "TS Portal - Agri Dept", "te": "TS పోర్టల్ - వ్యవసాయ శాఖ" },
+      "description": { "en": "Policies and scheme information for agriculture sector.", "te": "వ్యవసాయ రంగానికి సంబంధించిన విధానాలు మరియు పథకాల సమాచారం." },
+      "link": "https://www.telangana.gov.in/departments/agriculture-and-co-operation"
+    },
+    {
+      "id": "myscheme", "icon": "fa-layer-group",
+      "name": { "en": "MyScheme Portal", "te": "మైస్కీమ్ పోర్టల్" },
+      "description": { "en": "Central portal listing all Telangana-specific schemes.", "te": "అన్ని తెలంగాణ-నిర్దిష్ట పథకాలను జాబితా చేసే కేంద్ర పోర్టల్." },
+      "link": "https://www.myscheme.gov.in/search/state/Telangana"
+    },
+    {
+      "id": "services_india", "icon": "fa-globe",
+      "name": { "en": "Services India", "te": "సర్వీసెస్ ఇండియా" },
+      "description": { "en": "Links to AGRISNET, Soil Health Card, weather info.", "te": "అగ్రిస్నెట్, సాయిల్ హెల్త్ కార్డ్, వాతావరణ సమాచారానికి లింక్‌లు." },
+      "link": "https://services.india.gov.in/service/detail/telangana-department-of-agriculture-information"
+    }
+  ],
+  "student": [
+    {
+      "id": "schooledu", "icon": "fa-school-flag",
+      "name": { "en": "School Education", "te": "పాఠశాల విద్య" },
+      "description": { "en": "Official portal for Classes 1–10.", "te": "1-10 తరగతులకు అధికారిక పోర్టల్." },
+      "link": "https://schooledu.telangana.gov.in/"
+    },
+    {
+      "id": "scert", "icon": "fa-book",
+      "name": { "en": "E-Textbooks (SCERT)", "te": "ఇ-టెక్స్ట్‌బుక్స్ (SCERT)" },
+      "description": { "en": "Free PDF textbooks for Classes 1–10.", "te": "1-10 తరగతుల ఉచిత PDF పాఠ్యపుస్తకాలు." },
+      "link": "https://scert.telangana.gov.in/"
+    },
+    {
+      "id": "toss", "icon": "fa-user-graduate",
+      "name": { "en": "Open School (TOSS)", "te": "ఓపెన్ స్కూల్ (TOSS)" },
+      "description": { "en": "For students in open schooling.", "te": "ఓపెన్ స్కూలింగ్ విద్యార్థుల కోసం." },
+      "link": "https://www.telanganaopenschool.org/"
+    },
+    {
+      "id": "tsbie", "icon": "fa-landmark",
+      "name": { "en": "Intermediate (TSBIE)", "te": "ఇంటర్మీడియట్ (TSBIE)" },
+      "description": { "en": "Syllabus, model papers, and exam info.", "te": "సిలబస్, మోడల్ పేపర్లు, మరియు పరీక్షల సమాచారం." },
+      "link": "https://acadtgbie.cgg.gov.in/"
+    },
+    {
+      "id": "dost", "icon": "fa-graduation-cap",
+      "name": { "en": "Degree Admissions (DOST)", "te": "డిగ్రీ అడ్మిషన్లు (DOST)" },
+      "description": { "en": "Online admission portal for degree colleges.", "te": "డిగ్రీ కళాశాలల ఆన్‌లైన్ అడ్మిషన్ పోర్టల్." },
+      "link": "https://dost.cgg.gov.in/"
+    },
+    {
+      "id": "tgswreis", "icon": "fa-child-reaching",
+      "name": { "en": "Social Welfare Schools", "te": "సాంఘిక సంక్షేమ పాఠశాలలు" },
+      "description": { "en": "Residential education for underprivileged students.", "te": "నిరుపేద విద్యార్థులకు రెసిడెన్షియల్ విద్య." },
+      "link": "https://www.tgswreis.in/"
+    },
+    {
+      "id": "tmreis", "icon": "fa-mosque",
+      "name": { "en": "Minority Schools", "te": "మైనారిటీ పాఠశాలలు" },
+      "description": { "en": "Govt-funded schools for minority communities.", "te": "మైనారిటీ వర్గాల కోసం ప్రభుత్వ నిధులతో పాఠశాలలు." },
+      "link": "https://tgmreistelangana.cgg.gov.in/"
+    },
+    {
+      "id": "task", "icon": "fa-tasks",
+      "name": { "en": "TASK Telangana", "te": "టాస్క్ తెలంగాణ" },
+      "description": { "en": "Telangana Academy for Skill and Knowledge.", "te": "తెలంగాణ అకాడమీ ఫర్ స్కిల్ అండ్ నాలెడ్జ్." },
+      "link": "https://www.task.telangana.gov.in/"
+    }
+  ]
+}

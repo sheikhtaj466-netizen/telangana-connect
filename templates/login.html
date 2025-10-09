@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card form-card">
+    <h2>{{ g.locale.login_prompt }}</h2>
+    <form action="{{ url_for('handle_login') }}" method="post">
+        <label for="phone">{{ g.locale.phone_label }}</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>
+      
+        <label for="user_type">{{ g.locale.profile_label }}</label>
+        <select id="user_type" name="user_type">
+            <option value="farmer">{{ g.locale.farmer }}</option>
+            <option value="student">{{ g.locale.student }}</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> {{ g.locale.login_button }}</button>
+    </form>
+</div>
+{% endblock %}
