@@ -1,39 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- NEW: PWA Install Button Logic ---
+    // --- FINAL PWA Install Button Logic ---
     let deferredPrompt;
     const installBtn = document.getElementById('install-btn');
 
     window.addEventListener('beforeinstallprompt', (e) => {
-        // Prevent the browser's default install prompt
+        console.log('beforeinstallprompt event fired.');
         e.preventDefault();
-        // Stash the event so it can be triggered later.
         deferredPrompt = e;
-        // Show our custom install button
+
         if (installBtn) {
-            installBtn.style.display = 'inline-flex';
+            // Change button to "Install App"
+            installBtn.disabled = false;
+            installBtn.innerHTML = '<i class="fas fa-download"></i> Install App';
         }
     });
 
     if (installBtn) {
         installBtn.addEventListener('click', async () => {
             if (deferredPrompt) {
-                // Show the browser's install prompt
                 deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
                 const { outcome } = await deferredPrompt.userChoice;
-                console.log(`User response to the install prompt: ${outcome}`);
-                // We've used the prompt, and can't use it again, throw it away
+                console.log(`User response: ${outcome}`);
                 deferredPrompt = null;
-                // Hide the button
-                installBtn.style.display = 'none';
+                installBtn.style.display = 'none'; // Hide button after interaction
             }
         });
     }
-    // --- End of new PWA logic ---
+
+    // Hide button if app is already installed
+    window.addEventListener('appinstalled', () => {
+        console.log('App was installed.');
+        if (installBtn) {
+            installBtn.style.display = 'none';
+        }
+    });
+    // --- End of PWA logic ---
 
 
-    // --- OLD: Existing Logic ---
-    // Page Loader Logic
+    // --- Existing Logic (No changes below) ---
     const loader = document.getElementById('loader');
     if (loader) {
         window.addEventListener('load', () => {
@@ -42,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll-in Animation for Cards
     const cards = document.querySelectorAll('.card');
     if (cards.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -61,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Back-to-Top Button Logic
     const backToTopButton = document.getElementById('back-to-top-btn');
     if (backToTopButton) {
         window.onscroll = () => {
@@ -76,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Aurora background follows mouse
     if (document.body.classList.contains('theme-aurora')) {
         document.body.addEventListener('mousemove', e => {
             document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
