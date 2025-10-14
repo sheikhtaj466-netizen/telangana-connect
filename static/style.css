@@ -181,3 +181,19 @@ body.theme-minimal .instagram-link:hover {
     background: #dee2e6;
     color: #007bff;
 }
+/* --- Install App Button Styling --- */
+.btn-install {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9em;
+}
+/* Aurora Theme Style */
+body.theme-aurora .btn-install {
+    background: linear-gradient(45deg, hsl(140, 100%, 60%), hsl(190, 100%, 60%));
+}
+/* Minimal Theme Style */
+body.theme-minimal .btn-install {
+    background-color: #28a745;
+}
