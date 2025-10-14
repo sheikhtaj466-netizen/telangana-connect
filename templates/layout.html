@@ -9,59 +9,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
-    
 </head>
 <body class="theme-{{ theme }}"> 
     <div id="loader"> <div class="spinner"></div> </div>
-
     <header class="main-header">
         <div class="container">
             <h1><i class="fas fa-landmark"></i> {{ g.locale.portal_title }}</h1>
             <div class="header-controls">
-                
                 <a href="https://www.instagram.com/sheikhtaj08/" target="_blank" class="instagram-link">
                     <i class="fa-brands fa-instagram"></i> sheikhtaj08
                 </a>
-
-                <button id="install-btn" class="btn btn-install" disabled>
-                    <i class="fas fa-spinner fa-spin"></i> Checking...
+                <button id="install-btn" class="btn btn-install" style="display: none;">
+                    <i class="fas fa-download"></i> Install App
                 </button>
-
                 <div class="theme-switcher">
                     <a href="?theme=aurora" class="{{ 'active' if theme == 'aurora' }}" title="Aurora Theme"><i class="fas fa-star-of-life"></i></a>
                     <a href="?theme=minimal" class="{{ 'active' if theme == 'minimal' }}" title="Minimal Theme"><i class="fas fa-leaf"></i></a>
                 </div>
-
                 <div class="lang-switcher">
                     <a href="{{ url_for('change_lang', lang='en', theme=theme) }}" class="{{ 'active' if g.lang == 'en' }}">EN</a> |
                     <a href="{{ url_for('change_lang', lang='te', theme=theme) }}" class="{{ 'active' if g.lang == 'te' }}">తె</a>
                 </div>
-
             </div>
         </div>
     </header>
-
     <main class="container">
         {% block content %}{% endblock %}
     </main>
-    
     <footer class="main-footer">
         <p>&copy; 2025 Government of Telangana. All Rights Reserved.</p>
     </footer>
-
     <button id="back-to-top-btn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-
     <script>
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
-                    .then(registration => console.log('ServiceWorker registration successful'))
-                    .catch(err => console.log('ServiceWorker registration failed: ', err));
-            });
+            navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+                .then(() => console.log('Service Worker Registered'));
         }
     </script>
 </body>

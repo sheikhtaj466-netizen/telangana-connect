@@ -15,7 +15,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/?theme=aurora&source=pwa",
+  "start_url": ".",
   "background_color": "#050a14",
   "display": "fullscreen",
   "scope": "/",
