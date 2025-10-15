@@ -19,15 +19,12 @@ def before_request():
     g.lang = session.get('lang', 'en')
     all_locales = read_json_file('data/locales.json')
     g.locale = all_locales.get(g.lang, all_locales['en'])
-    # Get theme from URL (e.g., ?theme=minimal), default to 'aurora'
     g.theme = request.args.get('theme', 'aurora')
 
 @app.route('/change_lang/<lang>')
 def change_lang(lang):
     session['lang'] = lang
-    # Keep the current theme when changing language
     theme = request.args.get('theme', 'aurora')
-    # Redirect back to the previous page, preserving the theme
     referrer = request.referrer.split('?')[0] if request.referrer else url_for('login_page')
     return redirect(f"{referrer}?theme={theme}")
 
@@ -52,7 +49,6 @@ def dashboard():
     
     return render_template('dashboard.html', services=user_services, theme=g.theme)
 
-# Baaki ke routes (grievance, track, logout, etc.) bhi theme pass karenge
 @app.route('/grievance')
 def grievance_page():
     if 'user_type' not in session: return redirect(url_for('login_page', theme=g.theme))
@@ -90,6 +86,12 @@ def grievance_status(ticket_id):
 def logout():
     session.clear()
     return redirect(url_for('login_page', theme=g.theme))
+
+# --- TEXTBOOKS PAGE ROUTE (YAHAN ADD HUA HAI) ---
+@app.route('/textbooks')
+def textbooks_page():
+    return render_template('textbooks.html', theme=g.theme)
+# ------------------------------------------------
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

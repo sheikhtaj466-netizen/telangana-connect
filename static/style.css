@@ -197,3 +197,42 @@ body.theme-aurora .btn-install {
 body.theme-minimal .btn-install {
     background-color: #28a745;
 }
+/* --- Textbooks Page & Button Styling --- */
+.btn-textbooks {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9em;
+}
+body.theme-aurora .btn-textbooks {
+    background: linear-gradient(45deg, hsl(25, 95%, 60%), hsl(55, 95%, 60%));
+}
+body.theme-minimal .btn-textbooks {
+    background-color: #fd7e14;
+}
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.link-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.5rem;
+}
+.theme-aurora .link-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.link-item:last-child {
+    border-bottom: none;
+}
+.link-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.link-item p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
